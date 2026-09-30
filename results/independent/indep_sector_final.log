@@ -1,0 +1,13 @@
+A ref1 xi independently confirmed 300 / 300 certified boxes 22 s kinds(snapped,|S|): {(False, 1): 296, (False, 2): 4}
+A ref2 xi independently confirmed 300 / 300 certified boxes 23 s kinds(snapped,|S|): {(False, 1): 294, (False, 2): 6}
+B ref1 xi independently confirmed 300 / 300 certified boxes 18 s kinds(snapped,|S|): {(False, 1): 295, (False, 2): 5}
+C ref1 s independently confirmed 300 / 300 certified boxes 25 s kinds(snapped,|S|): {(False, 1): 296, (False, 2): 4}
+D ref1 s independently confirmed 300 / 300 certified boxes 24 s kinds(snapped,|S|): {(False, 1): 295, (False, 2): 5}
+A ref1 xi independently confirmed 300 / 300 certified boxes 31 s kinds(snapped,|S|): {(True, 2): 300}
+C ref1 s independently confirmed 200 / 200 certified boxes 35 s kinds(snapped,|S|): {(False, 2): 200}
+A ref1 xi independently confirmed 300 / 300 certified boxes 22 s kinds(snapped,|S|): {(False, 1): 294, (False, 2): 6}
+A ref2 xi independently confirmed 300 / 300 certified boxes 22 s kinds(snapped,|S|): {(False, 1): 297, (False, 2): 3}
+B ref1 xi independently confirmed 300 / 300 certified boxes 18 s kinds(snapped,|S|): {(False, 1): 293, (False, 2): 7}
+C ref1 s independently confirmed 300 / 300 certified boxes 27 s kinds(snapped,|S|): {(False, 1): 293, (False, 2): 7}
+D ref1 s independently confirmed 300 / 300 certified boxes 24 s kinds(snapped,|S|): {(False, 1): 295, (False, 2): 5}
+INDEP_FINAL_DONE

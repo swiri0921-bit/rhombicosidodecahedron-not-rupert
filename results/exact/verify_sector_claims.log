@@ -1,0 +1,6 @@
+A ref1 claims 156 types ['ID', 'K', 'KI', 'KIx', 'Kx', 'Z'] violations 0
+A ref2 claims 156 types ['ID', 'K', 'KI', 'KIx', 'Kx', 'Z'] violations 0
+B ref1 claims 106 types ['ID', 'K', 'KI', 'KIx', 'Z'] violations 0
+C ref1 claims 96 types ['ID', 'K', 'KI', 'KIx', 'Z'] violations 0
+D ref1 claims 92 types ['ID', 'K', 'KI', 'KIx', 'Z'] violations 0
+TOTAL violations 0

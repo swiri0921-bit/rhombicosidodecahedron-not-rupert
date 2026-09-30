@@ -1,0 +1,3 @@
+C ref1 rows new/old 23312 23312 identical True float/decimal disagreements 0 72 s
+C ref2 rows new/old 23312 23312 identical True float/decimal disagreements 0 74 s
+D ref1 rows new/old 22484 22484 identical True float/decimal disagreements 0 74 s
