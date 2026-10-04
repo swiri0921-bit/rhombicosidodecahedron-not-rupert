@@ -1,3 +1,4 @@
+7ab6dbbf38993a60db8ea4f1534b045f  code/certify_exact_data.py
 56d72fb7c30ac778ac9466a84a13353c  code/check_branches_exact.py
 6c8302a43cbf3afb53ecfead48714f5e  code/check_decimal_range.py
 66ba5ba78bfd53e4fd91bfb7fd1a0dd6  code/check_results.py
@@ -31,6 +32,8 @@ d3c80d522aae9f6203a7ff2519f3d2f1  code/rig_sylocal.py
 869e4adb97227afa77ad488807a2b939  code/rig_tube_run.py
 8cae9e49565a47e64eec1849910a2c78  code/run_laptop.py
 5eeef4e60abc38376ba1305a3ea92768  code/rupert.py
+d06bd600c8efd12dc9b66032262b0670  code/sample_global_leaves.py
+09cace80807a08ed6381e0f6a6dd8e30  code/sample_global_leaves_deep.py
 fe131a2c51a0f6cfa8b3223bdca70e97  code/sample_leaves.py
 e5de82c3d5b98ac2507ed90a87c41285  code/sanity_sing.py
 c1bca7885e4c8858ede7f61e67c6494d  code/validate_contact.py
