@@ -100,7 +100,7 @@ statements of the form ``this quantity is exactly zero'' (collinearity of projec
 identical vertex trajectories, exactness of a contact along the half-twist arc, a vertex lying in the shadow plane)
 are proved in exact arithmetic in $\Q(\sq)$, using exact coordinates of the singular configurations
 (Proposition~\ref{prop:exact}). The code and the certificates are available at \url{https://github.com/swiri0921-bit/rhombicosidodecahedron-not-rupert}
-(release \texttt{v1.0}; the file \texttt{results/CODE\_HISTORY.md} lists the hashes of the programs used for the runs).
+(release \texttt{v1.1}; the file \texttt{results/CODE\_HISTORY.md} lists the hashes of the programs used for the runs).
 
 \subsection*{Use of AI}
 The author chose the problem, planned and directed the project, and made the decisions on how to proceed at each
@@ -629,7 +629,9 @@ by Taylor series with explicit remainder); all were confirmed.
 
 These checks have a limited scope. The sampled sector boxes are random dyadic boxes of depth $6$ to $11$ (tube boxes:
 depth $3$ to $8$) which are certified at sampling time, not the leaves of the actual cover (which reaches depth $28$); $\xi$-mode boxes with
-$\tau_l=0$ are not sampled; and both implementations use the same exact data of the polyhedron. In an earlier
+$\tau_l=0$ were sampled separately ($6000$ boxes at $A$, both references, and $B$; \texttt{indep\_sector\_tau0.py}),
+including the extra hypothesis of Theorem~\ref{thm:sector} for $\tau_l=0$, and all were confirmed;
+and both implementations use the same exact data of the polyhedron. In an earlier
 version of the main program the second implementation detected an omitted term in the inactive-vertex condition
 (Lemma~\ref{lem:inactive}), which was corrected before the runs reported here.
 
@@ -647,8 +649,10 @@ $630$ SY-local leaves from $59$ cells, $640$ leaves of Theorem~\ref{thm:local2} 
 Theorem~\ref{thm:local5} from $58$ cells, and $378$ ball-membership leaves from $3$ cells; all were confirmed. (With
 five contact directions per vertex of the outer shadow, two leaves of Theorem~\ref{thm:local2} were not confirmed,
 because $c_0$ depends on this choice; with eleven directions all were.) In the same way, $1332$ actual leaves of the
-Global Theorem (the smallest ones of $40$ cells, half of them cells near the singular points, down to relative depth
-$10$) were re-checked with the exact rational implementation above; all were confirmed.
+Global Theorem were re-checked with the exact rational implementation above: in each of $40$ cells (half of them chosen
+for their deep covers or for lying near the singular points, half at random) the $30$ smallest leaves and $10$ further
+randomly chosen leaves, down to relative depth $10$ (\texttt{sample\_global\_leaves*.py}; arguments and seeds are
+listed in the repository); all were confirmed.
 
 As tests of the implementation (not part of the proof), the per-contact lower bounds of Theorem~\ref{thm:sector} were
 compared with the exact protrusion computed directly from the geometry at $3.5\cdot10^5$ random (contact,
@@ -706,10 +710,11 @@ exact structural claims in $\Q(\sq)$ (sectors, tubes) & $606+3148$ & 0 violation
 arc tubes $C$ (two references), $D$ & $2\times6963+6662$ boxes & 0 failures\\
 sectors $A$ (two references), $B$, $C$, $D$ & $3.61\cdot10^6$ boxes & 0 failures\\
 independent rational re-check: sectors / tubes & $3500$ / $500$ boxes & all confirmed\\
+independent rational re-check: $\xi$-mode sectors with $\tau_l=0$ & $6000$ boxes & all confirmed\\
 independent rational re-check: global leaves & $7290$ leaves & all confirmed\\
 third implementation, actual leaves: & & \\
 \quad SY-local / Thm~\ref{thm:local2} / Thm~\ref{thm:local5} / ball & $630$ / $640$ / $925$ / $378$ & all confirmed\\
-\quad global (deepest leaves of 40 cells) & $1332$ & all confirmed\\ \bottomrule
+\quad global (smallest leaves of 40 cells, plus random ones) & $1332$ & all confirmed\\ \bottomrule
 \end{tabular}
 \caption{Summary of the computation. All runs use the final version of the rigorous checks; during the sector runs
 only the witness search (Section~\ref{sec:cert}) and the maximal subdivision depth were extended, which affects which
@@ -836,8 +841,10 @@ is enclosed, from its definition, by an interval with rational end points (squar
 $\cos36^\circ=\gr/2$, $\sin36^\circ=\sqrt{10-2\sq}/4$), and the decimal value lies within $2.94\cdot10^{-59}$ of every
 point of this interval. Derived decimal quantities (frames at the singular views, projected vertices and their
 derivatives, contact data, products such as $T_Xg$) are computed from these inputs with $70$-digit arithmetic in a few
-hundred operations on numbers of modulus $O(1)$; their error is many orders of magnitude below the thresholds
-($10^{-12}$, $10^{-13}$, $10^{-40}$) at which decisions are taken. As a check, the whole preparation was repeated with
+hundred operations on numbers of modulus at most $10$; the only divisions are by the lengths of the edges of the outer
+shadows at $A$, $B$, $C$, $D$, which are at least $0.138$ (at $B$). Hence every derived quantity has error below
+$10^{4}\cdot3\cdot10^{-59}+10^{-66}<10^{-50}$, far below the thresholds ($10^{-12}$, $10^{-13}$, $10^{-40}$) at which
+decisions are taken. As a check, the whole preparation was repeated with
 $160$-digit arithmetic
 (\texttt{verify\_decimal\_precision.py}): every decision derived from the data in the sector and tube certificates
 (contact rows, active sets, exact partners, separation decisions, the values $D_\sigma$, the number of exact claims) is
