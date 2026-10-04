@@ -1,8 +1,9 @@
 56d72fb7c30ac778ac9466a84a13353c  code/check_branches_exact.py
 6c8302a43cbf3afb53ecfead48714f5e  code/check_decimal_range.py
-d3bcb2075476086d14f4e89ad90e0450  code/check_results.py
+66ba5ba78bfd53e4fd91bfb7fd1a0dd6  code/check_results.py
 02d6528092b29f4634dbe5cf93f01694  code/dec_util.py
 f05319d7ae9b456921f3f62fbe321c93  code/disprover.py
+618d66d23922491137a3a104a4620dde  code/dump_cert_rows.py
 bf3205fccbe6eb44834ef5d133e3808a  code/exact_check.py
 f1228fb1ef29ffa71e656ecc771631f8  code/exact_pts.py
 585b1ecb250db2127a28e161b6e7b731  code/exact_verify.py
@@ -20,7 +21,7 @@ e450bb18c3063c1be839412b393d9420  code/rid_setup.py
 612d6adbe34458e6068535e7fa311026  code/rig_global.py
 7878a893fca2795dcdb04666a2c92b82  code/rig_local2.py
 0d3031e55c8f605a782bfb72f931a1f8  code/rig_local5.py
-887690eae74d2fe3d49662cfecc6b83f  code/rig_main.py
+be275883bbefcda5b7d95c43f2be1b2e  code/rig_main.py
 7b245d15d4fa1e1f356bb8439e548278  code/rig_prover.py
 a999c30e48ff7e401c0019e5abfc2895  code/rig_queue5.py
 377929ec3e6c2d604a4e7fac01c07ba4  code/rig_sector.py
@@ -34,4 +35,6 @@ fe131a2c51a0f6cfa8b3223bdca70e97  code/sample_leaves.py
 e5de82c3d5b98ac2507ed90a87c41285  code/sanity_sing.py
 c1bca7885e4c8858ede7f61e67c6494d  code/validate_contact.py
 069ea4555c63741130967b7af3d6b965  code/validate_tube.py
+2085d84a803c30280daf74499f510d70  code/verify_decimal_precision.py
+097e4080ad86fe78946bc8c6fe123657  code/verify_gwn.py
 05a09488c2cef65ae5967b8493496f88  code/verify_sector_claims.py
