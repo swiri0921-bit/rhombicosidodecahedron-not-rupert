@@ -23,3 +23,12 @@ The original versions are those with the hashes in `CODE_MD5_FINAL.txt` (`check_
 New programs (checks only, not used by the certificates): `verify_gwn.py`, `verify_decimal_precision.py`,
 `dump_cert_rows.py`, `certify_exact_data.py`, `sample_leaves.py`, `sample_global_leaves.py`, `indep_leaves.py`,
 `run_laptop.py`.
+
+## Release v1.1 (2026-10-04)
+- `certify_exact_data.py` and `verify_gwn.py` now exit with a non-zero code on failure (and check the expected numbers
+  of values, 772 and 36,974); their results are unchanged.
+- Paper: wording of the Global-Theorem sample (Section 6.2, Table 2) and an explicit error bound for derived decimal
+  quantities (Appendix C).
+- New `indep_sector_tau0.py` (md5 58569c3b9d46732f6d0b952b5eaeb783): the independent sector check restricted to
+  xi-mode boxes with tau_l = 0, which the earlier sample skipped; 6000 / 6000 boxes confirmed
+  (`results/independent_tau0/`). Paper Section 6.2 and Table 2 updated.

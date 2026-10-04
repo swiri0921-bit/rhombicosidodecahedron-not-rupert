@@ -1,4 +1,4 @@
-7ab6dbbf38993a60db8ea4f1534b045f  code/certify_exact_data.py
+98dc2817c94e07e840a489353052032c  code/certify_exact_data.py
 56d72fb7c30ac778ac9466a84a13353c  code/check_branches_exact.py
 6c8302a43cbf3afb53ecfead48714f5e  code/check_decimal_range.py
 66ba5ba78bfd53e4fd91bfb7fd1a0dd6  code/check_results.py
@@ -39,5 +39,6 @@ e5de82c3d5b98ac2507ed90a87c41285  code/sanity_sing.py
 c1bca7885e4c8858ede7f61e67c6494d  code/validate_contact.py
 069ea4555c63741130967b7af3d6b965  code/validate_tube.py
 2085d84a803c30280daf74499f510d70  code/verify_decimal_precision.py
-097e4080ad86fe78946bc8c6fe123657  code/verify_gwn.py
+b9ac884fad361e2c57febfd68ec55a8a  code/verify_gwn.py
 05a09488c2cef65ae5967b8493496f88  code/verify_sector_claims.py
+58569c3b9d46732f6d0b952b5eaeb783  code/indep_sector_tau0.py
