@@ -1,0 +1,11 @@
+A ref1 dict_keys([]) rows 3248 violations so far 0
+A ref2 dict_keys([]) rows 3248 violations so far 0
+B ref1 dict_keys([]) rows 2266 violations so far 0
+C ref1 dict_keys([]) rows 2140 violations so far 0
+C ref1 ['fan', 'chifan', 'chidir'] rows 4060 violations so far 0
+C ref1 ['fan'] rows 7900 violations so far 0
+D ref1 dict_keys([]) rows 2144 violations so far 0
+D ref1 ['fan', 'chifan', 'chidir'] rows 4064 violations so far 0
+D ref1 ['fan'] rows 7904 violations so far 0
+rows checked 36974 violations 0
+OK

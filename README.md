@@ -24,7 +24,9 @@ all structural identities in exact arithmetic in Q(sqrt5).
 | `verify_sector_claims.py` | exact verification of the structural claims of the sector certificates |
 | `indep_global.py`, `indep_sector.py`, `indep_tube.py` | second implementation in exact rational arithmetic (samples, Section 6.2) |
 | `sample_leaves.py`, `indep_leaves.py`, `run_laptop.py` | third implementation: re-checks actual leaves of the cell cover closed by SY-local, Theorem 4.1, Theorem 4.2 and ball membership (Section 6.2) |
-| `check_results.py` | checks the result files in `results/` |
+| `check_results.py` | checks the result files in `results/` against the expected inventory (cells, 196 sector files with 54 start regions, three tube runs with their box and claim counts); exits with an error if anything is missing. `python check_results.py DIR` checks another directory with the same layout |
+| `verify_gwn.py` | exact check of the norm bound used in the sector certificates for all 36,974 contact rows (Appendix C) |
+| `verify_decimal_precision.py`, `dump_cert_rows.py` | repeats the decimal preparation with 160 digits and compares the stored data and all derived certificate decisions (Appendix C) |
 | `check_decimal_range.py` | checks the magnitude range of all enclosed decimal values (Appendix C) |
 | `check_branches_exact.py` | exact check that the second references meet the first ones at A and C (Lemma A.2) |
 | `validate_contact.py`, `validate_tube.py`, `sanity_sing.py` | tests of the implementation (not part of the proof) |
@@ -39,7 +41,10 @@ python rig_queue5.py ABCD <nproc>                     # sectors, with refinement
 python rig_main.py <nproc>                            # all cells
 python check_results.py                               # prints ALL OK
 ```
-All programs are resumable and write JSON/JSONL result files to `code/rig/`.
+All programs are resumable and write JSON/JSONL result files to `code/rig/` (a resumed `rig_main.py` re-runs every cell
+without a successful record, and writes `MAIN_DONE` only when all 211,680 cells are ok). Note that `check_results.py`
+checks the published files in `results/` by default; to check new runs, collect them in the same layout and pass that
+directory.
 
 ## Results (`results/`)
 | part | size | result |
