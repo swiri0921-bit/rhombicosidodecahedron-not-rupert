@@ -12,6 +12,7 @@ vertex data rebuilt from the definition, group and congruences proved in Q(sqrt5
 | L2 (Theorem 4.1) | 640 | 65 | 640/640 | `L2_leaves.jsonl`, `verify_L2_final_*.log` |
 | L5 (Theorem 4.2) | 925 | 58 | 925/925 | `laptop/L5_*` |
 | B (ball membership) | 378 | 3 | 378/378 | `laptop/B_*` |
+| G (Global Theorem, deepest leaves) | 1332 | 40 | 1332/1332 | `verify_G_actual.log`, `verify_G_actual_deep.log` (`code/sample_global_leaves*.py`, checked with `indep_global.py`) |
 
 Notes
 - `verify_L2_first_5dirs.log`: a first run with five contact directions per vertex of the outer shadow did not confirm
