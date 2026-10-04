@@ -25,6 +25,8 @@ all structural identities in exact arithmetic in Q(sqrt5).
 | `indep_global.py`, `indep_sector.py`, `indep_tube.py` | second implementation in exact rational arithmetic (samples, Section 6.2) |
 | `sample_leaves.py`, `indep_leaves.py`, `run_laptop.py` | third implementation: re-checks actual leaves of the cell cover closed by SY-local, Theorem 4.1, Theorem 4.2 and ball membership (Section 6.2) |
 | `check_results.py` | checks the result files in `results/` against the expected inventory (cells, 196 sector files with 54 start regions, three tube runs with their box and claim counts); exits with an error if anything is missing. `python check_results.py DIR` checks another directory with the same layout |
+| `certify_exact_data.py` | rigorous enclosure of the exact value of every decimal input (772 values) and check that the stored decimals are within 1e-55 (Appendix C) |
+| `sample_global_leaves.py` | re-checks the deepest actual Global-Theorem leaves of the cover with the exact rational implementation |
 | `verify_gwn.py` | exact check of the norm bound used in the sector certificates for all 36,974 contact rows (Appendix C) |
 | `verify_decimal_precision.py`, `dump_cert_rows.py` | repeats the decimal preparation with 160 digits and compares the stored data and all derived certificate decisions (Appendix C) |
 | `check_decimal_range.py` | checks the magnitude range of all enclosed decimal values (Appendix C) |
@@ -55,7 +57,10 @@ directory.
 | exact structural claims in Q(sqrt5) (sectors / tubes) | 606 / 3148 | 0 violations |
 | second implementation, exact rational (sector / tube boxes, global leaves) | 3500 / 500 / see log | all confirmed |
 | third implementation, actual leaves (SY-local / Thm 4.1 / Thm 4.2 / ball) | 630 / 640 / 925 / 378 | all confirmed |
+| exact rational re-check of actual Global-Theorem leaves (deepest of 40 cells) | 1332 | all confirmed |
+| rigorous enclosure of all decimal input data | 772 values | max error 2.94e-59 |
 
+- `CODE_HISTORY.md` — which program versions were used for the runs, and the two programs changed afterwards.
 - `cells.jsonl.gz` — one record per cell (`k` = cell index, `ok`, time, numbers of leaves by certificate: `G` global,
   `S` SY-local, `L2` Theorem 4.1, `L5` Theorem 4.2, `B` ball). Cells whose cover uses Theorem 4.1 were re-run after
   adding an explicit margin for the length of floating-point unit vectors (see `results/recheck_L2/`).
