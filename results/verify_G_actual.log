@@ -1,0 +1,21 @@
+117314 same_as_record G leaves 7869 checked 40 total 40 / 40 max depth so far 3 69 s
+206565 same_as_record G leaves 7869 checked 40 total 80 / 80 max depth so far 3 139 s
+134955 same_as_record G leaves 7140 checked 40 total 120 / 120 max depth so far 3 199 s
+188924 same_as_record G leaves 7140 checked 40 total 160 / 160 max depth so far 3 260 s
+117315 same_as_record G leaves 6988 checked 40 total 200 / 200 max depth so far 3 328 s
+155953 same_as_record G leaves 6900 checked 40 total 240 / 240 max depth so far 3 415 s
+50014 same_as_record G leaves 6792 checked 40 total 280 / 280 max depth so far 3 478 s
+50641 same_as_record G leaves 6409 checked 40 total 320 / 320 max depth so far 4 579 s
+69147 same_as_record G leaves 6150 checked 40 total 360 / 360 max depth so far 4 650 s
+137475 same_as_record G leaves 6118 checked 40 total 400 / 400 max depth so far 4 696 s
+99940 same_as_record G leaves 32 checked 32 total 432 / 432 max depth so far 4 697 s
+87148 same_as_record G leaves 32 checked 32 total 464 / 464 max depth so far 4 699 s
+60512 same_as_record G leaves 32 checked 32 total 496 / 496 max depth so far 4 701 s
+43525 same_as_record G leaves 32 checked 32 total 528 / 528 max depth so far 4 703 s
+101148 same_as_record G leaves 342 checked 40 total 568 / 568 max depth so far 4 707 s
+151571 same_as_record G leaves 32 checked 32 total 600 / 600 max depth so far 4 709 s
+181013 same_as_record G leaves 32 checked 32 total 632 / 632 max depth so far 4 711 s
+74364 same_as_record G leaves 63 checked 40 total 672 / 672 max depth so far 4 713 s
+145049 same_as_record G leaves 1 checked 1 total 673 / 673 max depth so far 4 713 s
+72615 same_as_record G leaves 32 checked 32 total 705 / 705 max depth so far 4 715 s
+actual Global-Theorem leaves: 705/705 confirmed (deepest relative depth 4)
