@@ -125,4 +125,6 @@ for name in ('TC', 'TD'):
         for j in range(3): n += 1; bad += not check(Td[i][j], Te[i][j], name)
 print('values checked', n, 'violations', bad)
 print('max |d - e| bound = %.3e (at %s)' % (float(worst[0]), worst[1]))
-print('OK' if bad == 0 and worst[0] < F(1, 10 ** 55) else 'PROBLEM')
+ok = bad == 0 and n == 772 and worst[0] < F(1, 10 ** 55)
+if n != 772: print('unexpected number of checked values:', n, '(expected 772)')
+print('OK' if ok else 'PROBLEM'); sys.exit(0 if ok else 1)

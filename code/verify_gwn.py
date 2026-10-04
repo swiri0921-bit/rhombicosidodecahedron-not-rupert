@@ -31,4 +31,5 @@ for name, mk, mode in builds():
             ex = sum(F(float(x)) for x in hi[j])
             if F(float(g[j])) ** 2 < ex: bad += 1
         tot += len(hi); print(name, kw.keys() and list(kw.keys()), 'rows', len(hi), 'violations so far', bad, flush=True)
-print('rows checked', tot, 'violations', bad); print('OK' if bad == 0 else 'PROBLEM')
+ok = bad == 0 and tot == 36974
+print('rows checked', tot, 'violations', bad); print('OK' if ok else 'PROBLEM'); sys.exit(0 if ok else 1)
