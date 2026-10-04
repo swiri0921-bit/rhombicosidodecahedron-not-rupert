@@ -826,6 +826,11 @@ is enclosed by $[-10^{-40},10^{-40}]$ if $\abs d<10^{-40}$ and by the two floati
 otherwise. Both enclosures are valid because every enclosed value satisfies either $\abs d\le3\cdot10^{-59}$ (these are
 the structural zeros, certified separately in $\Q(\sq)$) or $\abs d\ge0.009$, while the error of the decimal
 computations is below $10^{-55}$; the script \texttt{check\_decimal\_range.py} in the repository checks this range.
+The decimal error bound is supported by repeating the whole preparation with $160$-digit arithmetic
+(\texttt{verify\_decimal\_precision.py}): the $232$ stored values (views, half-twists, group element $h_2$, vertices,
+rotation) differ from their $160$-digit recomputation by at most $2.93\cdot10^{-59}$, and every decision derived from
+them in the sector and tube certificates (contact rows, active sets, exact partners, separation decisions, the values
+$D_\sigma$, the number of exact claims) is identical.
 
 The exact vertex coordinates in the rotated frame that are structurally zero are exactly $0$ in the decimal data; the
 programs for the global and local theorems enclose all coordinates by the floating-point neighbours of their value,
@@ -840,6 +845,10 @@ orders of magnitude, or is protected by an explicit factor:
  relative margin at least $7\cdot10^{-3}$, and an additional $10^{-9}$ is added);
 \item the outer-view distance test for membership in a ball $\mathcal B_X$ (margin $10^{-12}$);
 \item the conversion $\vartheta\le2y/\sqrt{1-y^2}$ in Theorem~\ref{thm:local2} (multiplied by $1+10^{-12}$);
+\item the norm $\norm{\partial b}$ in Theorem~\ref{thm:sector}, computed as the upward-rounded square root of a
+ floating-point sum of six upward-rounded squares (the sum itself is not rounded upward); it depends only on the
+ contact, and for all $36{,}974$ contact rows of the sector certificates the computed value was checked in exact
+ rational arithmetic to be an upper bound (\texttt{verify\_gwn.py});
 \item the lower bound for $c_0$ in Theorem~\ref{thm:local2}: the products of the (floating-point) cap centres with the
  interval bounds of the $g_c$ are summed in floating point, and an absolute margin $3\cdot10^{-15}$ is subtracted (the
  rounding error of these sums of three products of numbers of modulus at most $1$ is below $10^{-15}$).
@@ -857,7 +866,7 @@ decimal decisions agree with an earlier floating-point evaluation for all contac
 \begin{thebibliography}{99}
 \bibitem{Chai18} Y. Chai, L. Yuan, T. Zamfirescu, \emph{Rupert property of Archimedean solids}, Amer. Math. Monthly 125(6) (2018), 497--504.
 \bibitem{Fre21} A. Fredriksson, \emph{Optimizing for the Rupert property}, Amer. Math. Monthly 131(3) (2024); arXiv:2210.00601.
-\bibitem{Gos25} R. Gosain, \emph{Some new insights from highly optimized polyhedral passages}, Amer. Math. Monthly 133(7) (2026); arXiv:2509.08190.
+\bibitem{Gos25} R. Gosain, B. Grimmer, \emph{Some new insights from highly optimized polyhedral passages}, Amer. Math. Monthly 133(7) (2026); arXiv:2509.08190.
 \bibitem{Hoff19} B. Hoffmann, \emph{Rupert properties of polyhedra and the generalised Nieuwland constant}, J. Geom. Graph. 23(1) (2019), 29--35.
 \bibitem{JWY17} R. P. Jerrard, J. E. Wetzel, L. Yuan, \emph{Platonic passages}, Math. Mag. 90(2) (2017), 87--98.
 \bibitem{Lav22} G. Lavau, \emph{The truncated tetrahedron is Rupert}, Amer. Math. Monthly 126(10) (2019), 929--932.
