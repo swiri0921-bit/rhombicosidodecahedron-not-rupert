@@ -18,7 +18,9 @@ def work(args):
     out = os.path.join(RIG, f'main_{w}.jsonl'); done = set()
     if os.path.exists(out):
         for l in open(out):
-            try: done.add(json.loads(l)['k'])
+            try:
+                d = json.loads(l)
+                if d.get('ok'): done.add(d['k'])          # failed or timed-out cells are re-run on resume
             except Exception: pass
     f = open(out, 'a')
     order = np.random.default_rng(777).permutation(211680)
@@ -34,4 +36,13 @@ if __name__ == '__main__':
     NP = int(sys.argv[1]); OFF = int(sys.argv[2]) if len(sys.argv) > 2 else 0; TOT = int(sys.argv[3]) if len(sys.argv) > 3 else NP
     os.makedirs(RIG, exist_ok=True)     # workers OFF..OFF+NP-1 of TOT (the cell list is shared between machines)
     with Pool(NP) as p: p.map(work, [(w, TOT) for w in range(OFF, OFF + NP)], chunksize=1)
-    open(os.path.join(RIG, 'MAIN_DONE'), 'w').write('ok'); print('MAIN DONE')
+    okk = set()
+    for fn in os.listdir(RIG):
+        if fn.startswith('main_') and fn.endswith('.jsonl'):
+            for l in open(os.path.join(RIG, fn)):
+                try:
+                    d = json.loads(l)
+                    if d.get('ok'): okk.add(d['k'])
+                except Exception: pass
+    if len(okk) == 211680: open(os.path.join(RIG, 'MAIN_DONE'), 'w').write('ok'); print('MAIN DONE: all 211680 cells ok')
+    else: print('NOT DONE:', 211680 - len(okk), 'cells without a successful record (run again to retry them)')
