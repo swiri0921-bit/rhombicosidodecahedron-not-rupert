@@ -99,7 +99,8 @@ combinatorial decisions taken in floating point, all with large slack, are liste
 statements of the form ``this quantity is exactly zero'' (collinearity of projected vertices at a singular view,
 identical vertex trajectories, exactness of a contact along the half-twist arc, a vertex lying in the shadow plane)
 are proved in exact arithmetic in $\Q(\sq)$, using exact coordinates of the singular configurations
-(Proposition~\ref{prop:exact}). The code and the certificates are available at \url{https://github.com/swiri0921-bit/rhombicosidodecahedron-not-rupert}.
+(Proposition~\ref{prop:exact}). The code and the certificates are available at \url{https://github.com/swiri0921-bit/rhombicosidodecahedron-not-rupert}
+(release \texttt{v1.0}; the file \texttt{results/CODE\_HISTORY.md} lists the hashes of the programs used for the runs).
 
 \subsection*{Use of AI}
 The author chose the problem, planned and directed the project, and made the decisions on how to proceed at each
@@ -645,7 +646,9 @@ re-running the prover on randomly chosen cells (the regenerated covers agreed wi
 $630$ SY-local leaves from $59$ cells, $640$ leaves of Theorem~\ref{thm:local2} from $65$ cells, $925$ leaves of
 Theorem~\ref{thm:local5} from $58$ cells, and $378$ ball-membership leaves from $3$ cells; all were confirmed. (With
 five contact directions per vertex of the outer shadow, two leaves of Theorem~\ref{thm:local2} were not confirmed,
-because $c_0$ depends on this choice; with eleven directions all were.)
+because $c_0$ depends on this choice; with eleven directions all were.) In the same way, $1332$ actual leaves of the
+Global Theorem (the smallest ones of $40$ cells, half of them cells near the singular points, down to relative depth
+$10$) were re-checked with the exact rational implementation above; all were confirmed.
 
 As tests of the implementation (not part of the proof), the per-contact lower bounds of Theorem~\ref{thm:sector} were
 compared with the exact protrusion computed directly from the geometry at $3.5\cdot10^5$ random (contact,
@@ -705,7 +708,8 @@ sectors $A$ (two references), $B$, $C$, $D$ & $3.61\cdot10^6$ boxes & 0 failures
 independent rational re-check: sectors / tubes & $3500$ / $500$ boxes & all confirmed\\
 independent rational re-check: global leaves & $7290$ leaves & all confirmed\\
 third implementation, actual leaves: & & \\
-\quad SY-local / Thm~\ref{thm:local2} / Thm~\ref{thm:local5} / ball & $630$ / $640$ / $925$ / $378$ & all confirmed\\ \bottomrule
+\quad SY-local / Thm~\ref{thm:local2} / Thm~\ref{thm:local5} / ball & $630$ / $640$ / $925$ / $378$ & all confirmed\\
+\quad global (deepest leaves of 40 cells) & $1332$ & all confirmed\\ \bottomrule
 \end{tabular}
 \caption{Summary of the computation. All runs use the final version of the rigorous checks; during the sector runs
 only the witness search (Section~\ref{sec:cert}) and the maximal subdivision depth were extended, which affects which
@@ -826,11 +830,18 @@ is enclosed by $[-10^{-40},10^{-40}]$ if $\abs d<10^{-40}$ and by the two floati
 otherwise. Both enclosures are valid because every enclosed value satisfies either $\abs d\le3\cdot10^{-59}$ (these are
 the structural zeros, certified separately in $\Q(\sq)$) or $\abs d\ge0.009$, while the error of the decimal
 computations is below $10^{-55}$; the script \texttt{check\_decimal\_range.py} in the repository checks this range.
-The decimal error bound is supported by repeating the whole preparation with $160$-digit arithmetic
-(\texttt{verify\_decimal\_precision.py}): the $232$ stored values (views, half-twists, group element $h_2$, vertices,
-rotation) differ from their $160$-digit recomputation by at most $2.93\cdot10^{-59}$, and every decision derived from
-them in the sector and tube certificates (contact rows, active sets, exact partners, separation decisions, the values
-$D_\sigma$, the number of exact claims) is identical.
+The error bound for the input data is certified directly (\texttt{certify\_exact\_data.py}): for each of the $772$
+decimal input values (rotation, vertices, singular views, half-twists, $h_2$, and the $60$ group matrices) the exact value
+is enclosed, from its definition, by an interval with rational end points (square roots by integer square roots,
+$\cos36^\circ=\gr/2$, $\sin36^\circ=\sqrt{10-2\sq}/4$), and the decimal value lies within $2.94\cdot10^{-59}$ of every
+point of this interval. Derived decimal quantities (frames at the singular views, projected vertices and their
+derivatives, contact data, products such as $T_Xg$) are computed from these inputs with $70$-digit arithmetic in a few
+hundred operations on numbers of modulus $O(1)$; their error is many orders of magnitude below the thresholds
+($10^{-12}$, $10^{-13}$, $10^{-40}$) at which decisions are taken. As a check, the whole preparation was repeated with
+$160$-digit arithmetic
+(\texttt{verify\_decimal\_precision.py}): every decision derived from the data in the sector and tube certificates
+(contact rows, active sets, exact partners, separation decisions, the values $D_\sigma$, the number of exact claims) is
+identical.
 
 The exact vertex coordinates in the rotated frame that are structurally zero are exactly $0$ in the decimal data; the
 programs for the global and local theorems enclose all coordinates by the floating-point neighbours of their value,
