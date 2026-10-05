@@ -2,6 +2,8 @@
 
 Code and result files accompanying the paper *The rhombicosidodecahedron is not Rupert* (Gihyo Jung), `paper/main.pdf`.
 
+**Preprint (v9):** Zenodo, 5 October 2026, DOI [10.5281/zenodo.23159625](https://doi.org/10.5281/zenodo.23159625)
+
 ## Requirements
 Python >= 3.10 with `numpy`, `scipy` and `matplotlib` (the float oracle uses `matplotlib.path`). Linear programs
 (`scipy.optimize.linprog`/HiGHS) only produce *witnesses*; every certificate is re-verified in interval arithmetic, and
